@@ -49,7 +49,7 @@ class Student {
 
   setName = () => {
     const name = prompt("What is your name? : ");
-    if (isWord(name)) {
+    if (isWordWithSpaces(name)) {
       Student.studentName = name;
     } else {
       console.log("Invalid Name");
