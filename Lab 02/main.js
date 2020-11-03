@@ -1,0 +1,3 @@
+var Student = require("./student");
+
+

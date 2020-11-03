@@ -1,0 +1,26 @@
+F:\Lab2\bin\Debug\netcoreapp3.1\Lab2.exe
+F:\Lab2\bin\Debug\netcoreapp3.1\Lab2.deps.json
+F:\Lab2\bin\Debug\netcoreapp3.1\Lab2.runtimeconfig.json
+F:\Lab2\bin\Debug\netcoreapp3.1\Lab2.runtimeconfig.dev.json
+F:\Lab2\bin\Debug\netcoreapp3.1\Lab2.dll
+F:\Lab2\bin\Debug\netcoreapp3.1\Lab2.pdb
+F:\Lab2\obj\Debug\netcoreapp3.1\Lab2.csprojAssemblyReference.cache
+F:\Lab2\obj\Debug\netcoreapp3.1\Lab2.AssemblyInfoInputs.cache
+F:\Lab2\obj\Debug\netcoreapp3.1\Lab2.AssemblyInfo.cs
+F:\Lab2\obj\Debug\netcoreapp3.1\Lab2.csproj.CoreCompileInputs.cache
+F:\Lab2\obj\Debug\netcoreapp3.1\Lab2.dll
+F:\Lab2\obj\Debug\netcoreapp3.1\Lab2.pdb
+F:\Lab2\obj\Debug\netcoreapp3.1\Lab2.genruntimeconfig.cache
+F:\SE Lab\Lab2\obj\Debug\netcoreapp3.1\Lab2.csprojAssemblyReference.cache
+F:\SE Lab\Lab2\obj\Debug\netcoreapp3.1\Lab2.AssemblyInfoInputs.cache
+F:\SE Lab\Lab2\obj\Debug\netcoreapp3.1\Lab2.AssemblyInfo.cs
+F:\SE Lab\Lab2\obj\Debug\netcoreapp3.1\Lab2.csproj.CoreCompileInputs.cache
+F:\SE Lab\Lab2\obj\Debug\netcoreapp3.1\Lab2.dll
+F:\SE Lab\Lab2\obj\Debug\netcoreapp3.1\Lab2.pdb
+F:\SE Lab\Lab2\bin\Debug\netcoreapp3.1\Lab2.exe
+F:\SE Lab\Lab2\bin\Debug\netcoreapp3.1\Lab2.deps.json
+F:\SE Lab\Lab2\bin\Debug\netcoreapp3.1\Lab2.runtimeconfig.json
+F:\SE Lab\Lab2\bin\Debug\netcoreapp3.1\Lab2.runtimeconfig.dev.json
+F:\SE Lab\Lab2\bin\Debug\netcoreapp3.1\Lab2.dll
+F:\SE Lab\Lab2\bin\Debug\netcoreapp3.1\Lab2.pdb
+F:\SE Lab\Lab2\obj\Debug\netcoreapp3.1\Lab2.genruntimeconfig.cache
