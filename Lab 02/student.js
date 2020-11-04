@@ -45,6 +45,8 @@ class courseResult {
       this.courseTitle = title;
       this.creditHrs = hrs;
       this.marks = mar;
+    } else {
+      console.log("Invalid Credentials");
     }
   };
 
@@ -121,6 +123,16 @@ class courseResult {
     if (grade == "D") return 1.0;
     if (grade == "F") return 0;
   };
+  toString = () => {
+    var str = {
+      ID: this.courseID,
+      Name: this.courseTitle,
+      CH: this.creditHrs,
+      Marks: this.marks,
+      Grade: this.getGrade(),
+    };
+    console.table(str);
+  };
 }
 
 // ____________________________________________________
@@ -136,11 +148,10 @@ class Student {
   // -----------------------------------------------
 
   constructor() {
-    this.name = "";
+    this.studentName = "";
     this.registrationNumber = "XXX";
     this.degree = "";
-    this.courses = [];
-    this.crsResult = new courseResult();
+    this.crsResult = [];
   }
 
   // -----------------------------------------------
@@ -150,7 +161,7 @@ class Student {
   setName = () => {
     const name = prompt("What is your name? : ");
     if (isValidName(name)) {
-      Student.studentName = name;
+      this.studentName = name;
     } else {
       console.log("Invalid Name");
       this.setName();
@@ -180,6 +191,105 @@ class Student {
   // -----------------------------------------------
   getSemesters = () => {
     let count = 0;
+    let sem = [];
+    for (let i = 0; i < this.crsResult.length; i++) {
+      if (!this.crsResult[i].semester in sem) {
+        sem.push(this.crsResult[i].semester);
+        count++;
+      }
+    }
+    return count;
+  };
+
+  getSemGPA = (sem) => {
+    let gpa = 0;
+    let schrs = 0;
+    var res = this.crsResult;
+    for (let i = 0; i < res.length; i++) {
+      if (res[i].semester == sem) {
+        gpa += res[i].getGradepoint() + res.creditHrs;
+        schrs += res.creditHrs;
+      }
+    }
+    gpa = gpa / schrs;
+    return gpa;
+  };
+
+  getCGPA = () => {
+    let res = this.crsResult;
+    let cgpa = 0;
+    let chrs = 0;
+    for (let i = 0; i < res.length; i++) {
+      cgpa += res[i].getGradepoint() + res[i].creditHrs;
+      chrs += res[i].creditHrs;
+    }
+    cgpa = cgpa / chrs;
+    return cgpa;
+  };
+
+  getTotalCreditHours = () => {
+    let res = this.crsResult;
+    let chrs = 0;
+    for (let i = 0; i < res.length; i++) {
+      chrs += res.creditHrs;
+    }
+  };
+  getSemCreditHours = (sem) => {
+    let res = this.crsResult;
+    let chrs = 0;
+    for (let i = 0; i < res.length; i++) {
+      if (res.semester == sem) chrs += res.creditHrs;
+    }
+    return chrs;
+  };
+  getSession = () => {
+    let sess = "";
+    for (let i = 0; i < 4; i++) {
+      sess.concat(this.registrationNumber[i]);
+    }
+    return sess;
+  };
+  getDiscipline = () => {
+    let dis = "";
+    for (let i = 5; i < 7; i++) {
+      dis.concat(this.registrationNumber[i]);
+    }
+    return dis;
+  };
+
+  toString = () => {
+    let res = this.courseResult;
+    var str =
+      "Name : " +
+      this.name +
+      " \tDegree : " +
+      this.degree +
+      " " +
+      this.getDiscipline() +
+      "\n Registration Number : " +
+      this.registrationNumber +
+      "Session : " +
+      this.getSession();
+    console.log(str);
+    for (let i = 0; i < this.getSemesters(); i++) {
+      console.log("Semester " + i + 1);
+      let arr = [];
+      for (let j = 0; j < res.length; j++) {
+        if (res[j].semester == i + 1) {
+          let details = [
+            { ID: res[j].courseID },
+            { Name: res[j].name },
+            { CH: res[j].creditHrs },
+            { Marks: res[j].marks },
+            { Grade: res[j].getGrade() },
+          ];
+          arr.push(details);
+        }
+      }
+      console.table(arr);
+      console.log("SGPA : " + this.getSemGPA());
+    }
+    console.log("CGPA" + this.getCGPA());
   };
 }
 
@@ -263,3 +373,22 @@ const isvalidDegree = (deg) => {
 var student1 = new Student();
 student1.setName();
 student1.setRegNo();
+student1.setDegree();
+
+
+
+var n = prompt("Enter Number of courses : ");
+for (let i = 0; i < n; i++) {
+  console.log("Enter Course Details : ")
+  var course1 = new courseResult();
+  course1.setCrsId();
+  course1.setCrsTitle();
+  course1.setCrdHrs();
+  course1.setMarks();
+  course1.setSemester();
+  course1.toString();
+  student1.crsResult.push(course1);
+}
+console.log (student1.studentName);
+
+student1.toString();
